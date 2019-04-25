@@ -3,7 +3,7 @@ import GrandChild from "./GrandChild";
 
 const Child = () => (
   <div>
-    <h2> This is the Child Component</h2>
+    <h2> This is the Child Component for testing</h2>
     <GrandChild />
   </div>
 );
