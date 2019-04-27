@@ -14,8 +14,8 @@ class App extends React.Component {
     };
   }
 
-  handleChange = e => {
-    e.preventDefault();
+  handleChange = event => {
+    event.preventDefault();
     this.setColor(e.target.value);
   };
 
