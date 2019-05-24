@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      color: "limegreen",
+      color: "red",
       handleChange: this.handleChange
     };
   }
