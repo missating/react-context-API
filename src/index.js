@@ -9,28 +9,25 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      color: "Green",
-      handleChange: this.handleChange
+      // color: "yellow",
+      // handleChange: this.handleChange
     };
   }
 
-  handleChange = event => {
-    event.preventDefault();
-    this.setColor(e.target.value);
-  };
+  // handleChange = event => {
+  //   event.preventDefault();
+  //   this.setColor(event.target.value);
+  // };
 
-  setColor = color => {
-    this.setState({ color });
-  };
+  // setColor = color => {
+  //   this.setState({ color });
+  // };
   render() {
     return (
       <Provider value={this.state}>
         <div
-          className="App"
-          style={{ backgroundColor: this.state.color, height: "100vh" }}
+          className="app"
         >
-          <h1>Hello CodeSandbox</h1>
-          <h2>Start editing to see some magic happen!</h2>
           <Child />
         </div>
       </Provider>
