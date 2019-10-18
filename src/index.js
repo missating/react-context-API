@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "./Context";
-import Child from "./Child";
+import Form from "./Form";
 
 import "./styles.css";
 
@@ -13,8 +13,8 @@ class App extends React.Component {
       password: '',
       userIdError: '',
       passwordError: '',
-      pcolor: '',
-      ucolor: '',
+      userIdColor: '',
+      passwordColor: '',
       onChange: this.onChange,
       onLogin: this.onLogin
     };
@@ -30,16 +30,16 @@ class App extends React.Component {
   onLogin = event => {
     event.preventDefault();
     if (/^ *$/.test(this.state.userId)) {
-      this.setState({ ucolor: 'yellow', userIdError: 'user id warning error' })
+      this.setState({ userIdColor: 'yellow', userIdError: 'user id warning error' })
     }
     if (/^ *$/.test(this.state.password)) {
-      this.setState({ pcolor: 'yellow', passwordError: 'password warning error' })
+      this.setState({ passwordColor: 'yellow', passwordError: 'password warning error' })
     }
     if (this.state.userId && this.state.userId.trim() !== 'testUser') {
-      this.setState({ ucolor: 'red', userIdError: 'user id danger error' })
+      this.setState({ userIdColor: 'red', userIdError: 'user id danger error' })
     }
     if (this.state.password && this.state.password.trim() !== 'mypassword') {
-      this.setState({ pcolor: 'red', passwordError: 'password danger error' })
+      this.setState({ passwordColor: 'red', passwordError: 'password danger error' })
     }
   }
 
@@ -49,7 +49,7 @@ class App extends React.Component {
         <div
           className="app"
         >
-          <Child />
+          <Form />
         </div>
       </Provider>
     );

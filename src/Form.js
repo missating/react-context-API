@@ -1,17 +1,16 @@
 import React from "react";
 import { Consumer } from "./Context";
+import Error from "./Error";
 
 import "./styles.css";
 
-const GrandChild = () => (
+const Form = () => (
   <Consumer>
     {({
       userId,
       password,
-      userIdError,
-      passwordError,
-      ucolor,
-      pcolor,
+      userIdColor,
+      passwordColor,
       onChange,
       onLogin,
       onCancel
@@ -28,7 +27,7 @@ const GrandChild = () => (
                   placeholder="User Id"
                   onChange={onChange}
                   value={userId}
-                  style={{ backgroundColor: ucolor }}
+                  style={{ backgroundColor: userIdColor }}
                 />
               </div>
               <div className="row">
@@ -39,7 +38,7 @@ const GrandChild = () => (
                   placeholder="Password"
                   onChange={onChange}
                   value={password}
-                  style={{ backgroundColor: pcolor }}
+                  style={{ backgroundColor: passwordColor }}
                 />
               </div>
               <div className="btn-row">
@@ -47,11 +46,11 @@ const GrandChild = () => (
                 <button type="submit" onClick={onCancel} className="btn">Cancel</button>
               </div>
             </div>
-
           </form>
+          <Error />
         </div>
       )}
   </Consumer>
 );
 
-export default GrandChild;
+export default Form;
