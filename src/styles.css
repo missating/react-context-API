@@ -56,3 +56,44 @@
     margin-right: 0;
   }
 }
+
+.show-toast {
+  visibility: visible;
+  min-width: 200px;
+  background-color: #4d4d4d;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 68%;
+  top: -83px;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.hide-toast{
+  visibility: hidden;
+}
+
+/* Animations to fade in and out the toast */
+@-webkit-keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: -83px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: -83px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: -83px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: -83px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}

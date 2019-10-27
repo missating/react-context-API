@@ -11,8 +11,7 @@ class App extends React.Component {
     this.state = {
       userId: '',
       password: '',
-      userIdError: '',
-      passwordError: '',
+      error: '',
       userIdColor: '',
       passwordColor: '',
       onChange: this.onChange,
@@ -30,16 +29,16 @@ class App extends React.Component {
   onLogin = event => {
     event.preventDefault();
     if (/^ *$/.test(this.state.userId)) {
-      this.setState({ userIdColor: 'yellow', userIdError: 'user id warning error' })
+      this.setState({ userIdColor: 'yellow', error: 'user id warning error' })
     }
     if (/^ *$/.test(this.state.password)) {
-      this.setState({ passwordColor: 'yellow', passwordError: 'password warning error' })
+      this.setState({ passwordColor: 'yellow', error: 'password warning error' })
     }
     if (this.state.userId && this.state.userId.trim() !== 'testUser') {
-      this.setState({ userIdColor: 'red', userIdError: 'user id danger error' })
+      this.setState({ userIdColor: 'red', error: 'user id danger error' })
     }
     if (this.state.password && this.state.password.trim() !== 'mypassword') {
-      this.setState({ passwordColor: 'red', passwordError: 'password danger error' })
+      this.setState({ passwordColor: 'red', error: 'password danger error' })
     }
   }
 
